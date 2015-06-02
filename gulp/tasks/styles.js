@@ -11,7 +11,7 @@ var handleErrors = require('../util/handleErrors');
 
 // Task
 gulp.task('styles', function() {
-  return sass(global.config.src + '/styles/main.scss', 
+  return sass(global.config.src + '/styles', 
     {
       sourcemap: false,
       style: 'compressed'

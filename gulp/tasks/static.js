@@ -15,13 +15,12 @@ var changed = require('gulp-changed');
 
 // Task
 gulp.task('static', function() {
-
   // Filters
   var jsFilter = filter('**/*.js');
   var cssFilter = filter('**/*.css');
 
   // Dest
-  var DEST = global.config.dist + '/assets/';
+  var DEST = global.config.dist;
 
   return gulp.src(global.config.src + '/static/**')
     .pipe(changed(DEST))

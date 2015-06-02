@@ -10,7 +10,7 @@ var args = require('yargs').argv
 gulp.task('watch', function() {
 
   var lrFiles = [
-    global.config.dist + '/**/*.{html,php,css,js,png,jpg,jpeg,gif,svg}'
+    global.config.dist + '/**/*.{html,css,js,png,jpg,jpeg,gif,svg}'
   ];
 
   gulp.watch(global.config.src + '/styles/**', ['styles']);
@@ -65,5 +65,4 @@ gulp.task('watch', function() {
       // proxy: 'local.dev'
     });
   }
-
 });
