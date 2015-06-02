@@ -6,15 +6,15 @@ var config = require('./gulp/config');
 
 // Default task. Remove what you don't need.
 gulp.task('default', [
-  'scripts',
-  'styles',
-  'static',
-  'imagemin',
-  'svgmin',
-  'svg2png'
+	'scripts',
+	'styles',
+	'static',
+	'imagemin',
+	'svgmin',
+	'svg2png'
 ]);
 
 // Clean + run default
 gulp.task('build', ['clean'], function() {
-  gulp.start('default');
+	gulp.start('default');
 });
