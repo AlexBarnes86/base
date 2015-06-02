@@ -11,7 +11,7 @@
  * Thanks to @redclov3r for the `line-height` Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
-@mixin font-size($font-size, $line-height: true){
+@mixin font-size($font-size, $line-height: true) {
   font-size: $font-size;
   font-size: ($font-size / $base-font-size)*1rem;
   @if $line-height == true {
@@ -32,14 +32,14 @@
  * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
  * @thierrylemoulec for refining and improving my initial mixin.
  */
-@mixin headings($from: 1, $to: 6){
+@mixin headings($from: 1, $to: 6) {
   %base-heading {
     @content
   }
 
-  @if $from >= 1 and $to <= 6{
-    @for $i from $from through $to{
-      h#{$i}{
+  @if $from >= 1 and $to <= 6 {
+    @for $i from $from through $to {
+      h#{$i} {
         @extend %base-heading;
       }
     }
@@ -80,15 +80,21 @@
   #{$property}: $px-values;
   // If there is only one (numeric) value, return the property/value line for it.
   @if type-of($px-values) == "number" {
-    #{$property}: $px-values / $baseline-rem; }
+    #{$property}: $px-values / $baseline-rem;
+  }
   @else {
     // Create an empty list that we can dump values into
     $rem-values: ();
     @each $value in $px-values {
       // If the value is zero or not a number, return it
       @if $value == 0 or type-of( $value ) != "number" {
-        $rem-values: append($rem-values, $value); }
+        $rem-values: append($rem-values, $value);
+      }
       @else {
-        $rem-values: append($rem-values, $value / $baseline-rem); } }
+        $rem-values: append($rem-values, $value / $baseline-rem);
+      }
+    }
     // Return the property and its list of converted values
-    #{$property}: $rem-values; }
+    #{$property}: $rem-values;
+  }
+}

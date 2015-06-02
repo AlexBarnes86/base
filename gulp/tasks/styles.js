@@ -11,11 +11,11 @@ var handleErrors = require('../util/handleErrors');
 
 // Task
 gulp.task('styles', function() {
-  return gulp.src(global.config.src + '/styles/main.scss')
-    .pipe(sass({
+  return sass(global.config.src + '/styles/main.scss', 
+    {
       sourcemap: false,
       style: 'compressed'
-    }))
+    })
     .on('error', handleErrors)
     .pipe(prefix('last 2 version', '> 1%'))
     .pipe(header(global.config.banner))

@@ -8,10 +8,10 @@ html {
 }
 
 body {
-  font: #{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-primary;
+  /*font: #{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-primary;*/
   color: palette(primary, dark);
 }
 
 .container {
-  @include outer-container;
+/*  @include outer-container; */
 }
