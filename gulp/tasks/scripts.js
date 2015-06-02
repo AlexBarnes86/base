@@ -14,7 +14,7 @@ var handleErrors = require('../util/handleErrors');
 // Task
 gulp.task('scripts', function() {
   return gulp.src([
-      global.config.src + '/scripts/**',
+      global.config.srcScripts + '/**',
     ])
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
@@ -24,5 +24,5 @@ gulp.task('scripts', function() {
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(header(global.config.banner))
-    .pipe(gulp.dest(global.config.dist + '/assets/scripts'));
+    .pipe(gulp.dest(global.config.distScripts));
 });

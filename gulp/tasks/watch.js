@@ -13,11 +13,11 @@ gulp.task('watch', function() {
     global.config.dist + '/**/*.{html,css,js,png,jpg,jpeg,gif,svg}'
   ];
 
-  gulp.watch(global.config.src + '/styles/**', ['styles']);
-  gulp.watch(global.config.src + '/scripts/**', ['scripts']);
-  gulp.watch(global.config.src + '/images/**/*.{png,jpg,jpeg,gif}', ['imagemin']);
-  gulp.watch(global.config.src + '/images/**/*.{svg}', ['svg']);
-  gulp.watch(global.config.src + '/static/**', ['static']);
+  gulp.watch(global.config.srcStyles + '/**', ['styles']);
+  gulp.watch(global.config.srcScripts + '/**', ['scripts']);
+  gulp.watch(global.config.srcImages + '/**/*.{png,jpg,jpeg,gif}', ['imagemin']);
+  gulp.watch(global.config.srcImages + '/**/*.{svg}', ['svg']);
+  gulp.watch(global.config.srcStatic + '/**', ['static']);
 
   /**
    * Include LiveReload

@@ -1,5 +1,8 @@
 # Base project
-> A base project with all the things.
+> A base project with:
+* npm for server side / development dependencies
+* bower for client side dependencies
+* gulp
 
 ## Contains
 - Ruby Sass compile (with autoprefixer)
@@ -14,7 +17,6 @@
 ### Roadmap
 - Bower
 - Browserify
-
 
 ## Usage
 
@@ -54,3 +56,7 @@ Starts a static HTTP server using [Connect](https://github.com/senchalabs/connec
 ```
 gulp watch -c
 ```
+
+## TODO
+* Integrate html5 boilerplate
+* Integrate angular-bootstrap

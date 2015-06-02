@@ -8,5 +8,5 @@ var del = require('del');
 
 // Task
 gulp.task('clean', function(cb) {
-  del([global.config.dist], cb);
+	del([global.config.dist], cb);
 });

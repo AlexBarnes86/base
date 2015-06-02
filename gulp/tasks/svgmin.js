@@ -1,5 +1,5 @@
 /*--------------------------------------------------*\
-  Compress SVG files
+	Compress SVG files
 \*--------------------------------------------------*/
 
 // Modules
@@ -10,16 +10,16 @@ var changed = require('gulp-changed');
 
 // Task
 gulp.task('svgmin', function() {
-  var DEST = global.config.dist + '/assets/images';
+	var DEST = global.config.distImages + '/images';
 
-  return gulp.src(global.config.src + '/images/**/*.svg')
-    .pipe(changed(DEST))
-    .pipe(svgmin([
-      {removeViewBox: false},            // Keep viewBox attr
-      {cleanupIDs: false},               // Keep ID's
-      {removeHiddenElems: false},        // Keep opacity="0" elems
-      {_collections: false},             // Keep preserveAspectRatio
-      {removeUnknownsAndDefaults: false} // Keep ID on <svg> tag
-    ]))
-    .pipe(gulp.dest(DEST))
+	return gulp.src(global.config.srcImages + '/**/*.svg')
+		.pipe(changed(DEST))
+		.pipe(svgmin([
+			{removeViewBox: false},					// Keep viewBox attr
+			{cleanupIDs: false},					// Keep ID's
+			{removeHiddenElems: false},				// Keep opacity="0" elems
+			{_collections: false},					// Keep preserveAspectRatio
+			{removeUnknownsAndDefaults: false}		// Keep ID on <svg> tag
+		]))
+		.pipe(gulp.dest(DEST))
 });

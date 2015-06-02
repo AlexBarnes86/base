@@ -1,5 +1,5 @@
 /*--------------------------------------------------*\
-  Compress images
+	Compress images
 \*--------------------------------------------------*/
 
 // Modules
@@ -9,14 +9,14 @@ var changed = require('gulp-changed');
 
 // Task
 gulp.task('imagemin', function() {
-  var DEST = global.config.dist + '/assets/images';
+	var DEST = global.config.distImages;
 
-  return gulp.src(global.config.src + '/images/**/*.{jpg,jpeg,png,gif}')
-    .pipe(changed(DEST))
-    .pipe(imagemin({
-        optimizationLevel: 3,
-        progressive: true,
-        interlaced: true
-      }))
-    .pipe(gulp.dest(DEST))
+	return gulp.src(global.config.src + '/images/**/*.{jpg,jpeg,png,gif}')
+		.pipe(changed(DEST))
+		.pipe(imagemin({
+				optimizationLevel: 3,
+				progressive: true,
+				interlaced: true
+			}))
+		.pipe(gulp.dest(DEST))
 });

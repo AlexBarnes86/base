@@ -1,5 +1,5 @@
 /*--------------------------------------------------*\
-  Convert SVG to PNG
+	Convert SVG to PNG
 \*--------------------------------------------------*/
 
 // Modules
@@ -9,10 +9,10 @@ var changed = require('gulp-changed');
 
 // Task
 gulp.task('svg2png', function() {
-  var DEST = global.config.dist + '/assets/images';
+	var DEST = global.config.distImages;
 
-  return gulp.src(global.config.src + '/images/**/*.svg')
-    // .pipe(changed(DEST)) // Might cause odd behavior
-    .pipe(svg2png())
-    .pipe(gulp.dest(DEST))
+	return gulp.src(global.config.srcImages + '/**/*.svg')
+		// .pipe(changed(DEST)) // Might cause odd behavior
+		.pipe(svg2png())
+		.pipe(gulp.dest(DEST))
 });

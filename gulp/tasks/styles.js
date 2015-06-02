@@ -1,5 +1,5 @@
 /*--------------------------------------------------*\
-  Compile styles
+	Compile styles
 \*--------------------------------------------------*/
 
 // Modules
@@ -11,13 +11,13 @@ var handleErrors = require('../util/handleErrors');
 
 // Task
 gulp.task('styles', function() {
-  return sass(global.config.src + '/styles', 
-    {
-      sourcemap: false,
-      style: 'compressed'
-    })
-    .on('error', handleErrors)
-    .pipe(prefix('last 2 version', '> 1%'))
-    .pipe(header(global.config.banner))
-    .pipe(gulp.dest(global.config.dist + '/assets/styles'));
+	return sass(global.config.srcStyles, 
+		{
+			sourcemap: false,
+			style: 'compressed'
+		})
+		.on('error', handleErrors)
+		.pipe(prefix('last 2 version', '> 1%'))
+		.pipe(header(global.config.banner))
+		.pipe(gulp.dest(global.config.distStyles));
 });

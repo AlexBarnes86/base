@@ -22,7 +22,7 @@ gulp.task('static', function() {
   // Dest
   var DEST = global.config.dist;
 
-  return gulp.src(global.config.src + '/static/**')
+  return gulp.src(global.config.srcStatic + '/**')
     .pipe(changed(DEST))
 
     // .js filter
